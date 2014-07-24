@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="appManager">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <script type="text/javascript" src="greeks.js"></script>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+<header>
+    <h1 align="center">Black-Scholes Data Entry</h1>
+</header>
+<div class="list-container">
+    <div class="list-group" ng-controller="DataController as dataCtrl" ng-submit="dataCtrl.calculate()" novalidate>
+        <form name="dataInput" style="float:left;">
+            <fieldset>
+
+                <h4>Call or Put:</h4>
+                <select class="btn btn-default dropdown-toggle" data-toggle="dropdown" ng-model="dataCtrl.data.optionType">
+                    <option value=c>Call</option>
+                    <option value=p>Put</option>
+                </select>
+
+                <h4><a href="https://www.google.com/finance" target="_blank">Stock </a></h4>
+
+                <div title="The price of the underlying asset">
+                    <input type="number" class="form-control" name="stock" ng-model="dataCtrl.data.stock" min=0
+                           step=.001
+                           style="width:100px">
+                </div>
+                <h4><a href="http://www.optionmonster.com/quotes/?symbol=goog" target="_blank">Strike </a></h4>
+
+                <div title="The price for the option at expiration">
+                    <input type="number" class="form-control" name="strike" ng-model="dataCtrl.data.strike" min=0
+                           step=.001
+                           style="width:100px">
+                </div>
+
+                <h4><a href="http://www.ivolatility.com/" target="_blank">Volatility </a></h4>
+
+                <div title="The variance in stock price">
+                    <input type="number" class="form-control" name="volatility" ng-model="dataCtrl.data.volatility"
+                           min=0
+                           step=.000000001 style="width:100px">
+                </div>
+                <h4>Days to expiry: </h4>
+
+                <div title="The days (including non market days) to expiration">
+                    <input type="number" class="form-control" name="time_to_expiry"
+                           ng-model="dataCtrl.data.timeToExpiry"
+                           min=0
+                           style="width:100px">
+                </div>
+                <h4><a href="http://www.marketwatch.com/tools/pftools/" target="_blank">Interest Rate </a></h4>
+
+                <div title="The interest rate corresponding to the closest yield of a T-Bill.">
+                    <input type="number" class="form-control" name="interest_rate" ng-model="dataCtrl.data.interestRate"
+                           min=0
+                           step=.000000001 max=1 style="width:100px">
+                </div>
+
+                <input type="submit" class="btn btn-default btn-lg">
+
+            </fieldset>
+        </form>
+        <ul style="float:left">
+            <li><b>Price: </b> {{dataCtrl.greekData.optionValue}}</li>
+            <li><b>Delta: </b> {{dataCtrl.greekData.delta}}</li>
+            <li><b>Gamma: </b> {{dataCtrl.greekData.gamma}}</li>
+            <li><b>Theta: </b> {{dataCtrl.greekData.theta}}</li>
+            <li><b>Vega: </b> {{dataCtrl.greekData.vega}}</li>
+            <li><b>Rho: </b> {{dataCtrl.greekData.rho}}</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+
+</html>
