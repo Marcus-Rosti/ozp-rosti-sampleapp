@@ -1,0 +1,7 @@
+#ignore defaults
+angular.min.js
+bootstrap.min.js
+bootstrap.min.css
+../node_modules/**/*
+../package.json
+../Gruntfile.js

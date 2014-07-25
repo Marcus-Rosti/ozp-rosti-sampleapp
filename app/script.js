@@ -9,7 +9,7 @@
 			stock: 100,
 			strike: 94,
 			volatility: .27,
-			timeToExpiry: 20,
+			timeToExpiry: 25,
 			interestRate: .0001
 		};
 
