@@ -10,19 +10,26 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-
-.header-file{
-    position: relative;
-    display: block;
-    margin: 0 auto;
+.nav-pills {
+    background-color: #ff7033;
 }
 
-.list-container{
-    display: block;
-    margin: 0 auto;
-    /*border: 1px dotted black;*/
-    width: 400px;
-    height: auto;
-    /*background: blue;*/
-    position: relative;
+table {
+    color:#000000;
+    /*background-color:#0d3268;*/
+    margin-left:auto;
+    margin-right:auto;
+    /*border: 2px dashed #ff7033;*/
 }
+input:hover{
+    background-color:#ff7033;
+}
+input:default {
+    background-color: #909395;
+}
+
+td {
+  height:25%;
+  width:25%;
+}
+
