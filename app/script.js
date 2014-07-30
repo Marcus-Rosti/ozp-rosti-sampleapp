@@ -16,12 +16,10 @@
 
         this.setCPTab = function (setTab) {
             this.cpTab = setTab;
-            console.log(this.cpTab);
         };
 
         this.setGHTab = function (setTab) {
             this.ghTab = setTab;
-            console.log(this.ghTab);
         };
     });
 
@@ -33,8 +31,7 @@
             strike: 94,
             volatility: .27,
             timeToExpiry: 25,
-            interestRate: .0001,
-            numberOfOptions: 10
+            interestRate: .0001
         };
 
         this.greekData = {
@@ -47,8 +44,10 @@
         };
 
         this.neutralData = {
+            numberOfOptions: 10,
             deltaNeutral: 0,
-            gammaDNeutral: 0
+            gammaDNeutral: 0,
+            costOfHedge: 0
         };
 
         this.calculate = function () {
@@ -69,6 +68,9 @@
                 this.greekData.rho = rhoPut(this.data.stock, this.data.strike, time, this.data.interestRate, this.data.volatility);
                 this.greekData.vega = vegaPut(this.data.stock, this.data.strike, time, this.data.interestRate, this.data.volatility);
             }
+            this.neutralData.deltaNeutral = -this.greekData.delta * this.neutralData.numberOfOptions * 100;
+            this.neutralData.costOfHedge = this.neutralData.deltaNeutral * this.data.stock + this.greekData.optionValue * this.neutralData.numberOfOptions;
+            console.log(this.neutralData.costOfHedge);
         };
 
     });

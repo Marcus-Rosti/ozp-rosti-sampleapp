@@ -398,32 +398,32 @@ function EWMA(stockPrices, lambda) {
 //var aapl = getHistoricalData("AAPL","2014-01-01");
 
 
-var stock = 94;
-var strike = 91;
-var time = 9.0 / 252.0;
-var interestRate = .0002;
-var vol = .2732;
-console.log("Call Price: " + BlackScholes("c", stock, strike, time, interestRate, vol));
-console.log("Delta_Call: " + deltaCall(stock, strike, time, interestRate, vol));
-console.log("Gamma_Call: " + gammaCall(stock, strike, time, interestRate, vol));
-console.log("Vega_Call:  " + vegaCall(stock, strike, time, interestRate, vol));
-console.log("Theta_Call: " + thetaCall(stock, strike, time, interestRate, vol));
-console.log("Rho_Call:   " + rhoCall(stock, strike, time, interestRate, vol));
-console.log("");
-console.log("Put Price:  " + BlackScholes("p", stock, strike, time, interestRate, vol));
-console.log("Delta_Put:  " + deltaPut(stock, strike, time, interestRate, vol));
-console.log("Gamma_Put:  " + gammaPut(stock, strike, time, interestRate, vol));
-console.log("Vega_Put:   " + vegaPut(stock, strike, time, interestRate, vol));
-console.log("Theta_Put:  " + thetaPut(stock, strike, time, interestRate, vol));
-console.log("Rho_Put:    " + rhoPut(stock, strike, time, interestRate, vol));
+//var stock = 94;
+//var strike = 91;
+//var time = 9.0 / 252.0;
+//var interestRate = .0002;
+//var vol = .2732;
+//console.log("Call Price: " + BlackScholes("c", stock, strike, time, interestRate, vol));
+//console.log("Delta_Call: " + deltaCall(stock, strike, time, interestRate, vol));
+//console.log("Gamma_Call: " + gammaCall(stock, strike, time, interestRate, vol));
+//console.log("Vega_Call:  " + vegaCall(stock, strike, time, interestRate, vol));
+//console.log("Theta_Call: " + thetaCall(stock, strike, time, interestRate, vol));
+//console.log("Rho_Call:   " + rhoCall(stock, strike, time, interestRate, vol));
+//console.log("");
+//console.log("Put Price:  " + BlackScholes("p", stock, strike, time, interestRate, vol));
+//console.log("Delta_Put:  " + deltaPut(stock, strike, time, interestRate, vol));
+//console.log("Gamma_Put:  " + gammaPut(stock, strike, time, interestRate, vol));
+//console.log("Vega_Put:   " + vegaPut(stock, strike, time, interestRate, vol));
+//console.log("Theta_Put:  " + thetaPut(stock, strike, time, interestRate, vol));
+//console.log("Rho_Put:    " + rhoPut(stock, strike, time, interestRate, vol));
 
 //prices from least recent to most recent
 //***These are backwards!!
 // console.log("\nEWMA calc google:");
 // EWMA(goog,.94);
 // console.log("\nEWMA calc facebook:");
-// EWMA(fb,.94);
-console.log("");
+//// EWMA(fb,.94);
+//console.log("");
 
 for (var k = 0; k < .03; k += .0001) {
     //console.log("Call Price @"+k+": " + BlackSchlmoes("c", stock,k,time,interestRate,vol));
